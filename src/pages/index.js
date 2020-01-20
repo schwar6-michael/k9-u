@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "../components/layout.css"
 import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import SectionOne from "../components/SectionOne"
