@@ -22,8 +22,18 @@ const PageWrapper = styled.div`
   #puppy {
     position: absolute;
     bottom: -150px;
-    right: 150px;
+    right: 125px;
     height: 650px;
+  }
+  @media (max-width: 1075px) {
+    padding: 0 30px;
+    #background {
+      display: none;
+    }
+    #puppy {
+      z-index: 0;
+      height: 400px;
+    }
   }
 `
 
@@ -39,9 +49,13 @@ const Button = styled.button`
   font-weight: 600;
   cursor: pointer;
   transition: 200ms ease-out;
+  outline: none;
   &:hover {
     transform: scale(1.02);
     background: hsl(116, 30%, 34%);
+  }
+  @media (max-width: 1075px) {
+    width: 100%;
   }
 `
 
@@ -62,9 +76,12 @@ const ContentContainer = styled.div`
   span {
     font-weight: 600;
   }
+  @media (max-width: 1075px) {
+    z-index: 1;
+  }
 `
 
-const SectionOne = () => {
+const SectionOne = ({ handleOpenModal }) => {
   return (
     <PageWrapper>
       <img id="background" src={background1} alt="background" />
@@ -75,7 +92,7 @@ const SectionOne = () => {
           It's simple. K9 University turns good boys and girls, into{" "}
           <span>GREAT </span>ones.
         </p>
-        <Button>Schedule Training Today</Button>
+        <Button onClick={handleOpenModal}>Schedule Training Today</Button>
       </ContentContainer>
     </PageWrapper>
   )

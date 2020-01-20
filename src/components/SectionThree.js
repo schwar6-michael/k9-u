@@ -36,6 +36,9 @@ const PageWrapper = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media (max-width: 900px) {
+    padding: 80px 30px;
+  }
 `
 
 const Image = styled.div`
@@ -72,6 +75,9 @@ const Name = styled.span`
   text-align: center;
   @media (max-width: 667px) {
     text-align: center;
+  }
+  @media (max-width: 900px) {
+    font-size: 1.8em;
   }
 `
 

@@ -32,6 +32,7 @@ const SectionTitle = styled.h1`
   font-family: "Roboto", sans-serif;
   color: #53924f;
   margin-bottom: 20px;
+  text-align: center;
 `
 
 const SectionDescriptor = styled.p`
@@ -39,6 +40,7 @@ const SectionDescriptor = styled.p`
   color: #000000;
   font-size: 20px;
   margin-bottom: 80px;
+  text-align: center;
 `
 
 const Button = styled.button`
@@ -53,6 +55,7 @@ const Button = styled.button`
   padding-top: 4px;
   font-weight: 600;
   cursor: pointer;
+  z-index: 5;
   transition: 200ms ease-out;
   &:hover {
     transform: scale(1.02);
@@ -82,9 +85,18 @@ const ContentContainer = styled.div`
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+  @media (max-width: 675px) {
+    .row {
+      flex-direction: column;
+    }
+  }
 `
 
-const SectionFour = props => {
+const SectionFour = ({ handleOpenModal }) => {
   return (
     <PageWrapper>
       <img
@@ -140,7 +152,7 @@ const SectionFour = props => {
             </ContentContainer>
           </div>
         </Container>
-        <Button>Get A Quote</Button>
+        <Button onClick={handleOpenModal}>Get A Quote</Button>
       </div>
     </PageWrapper>
   )

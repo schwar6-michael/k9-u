@@ -28,6 +28,9 @@ const PageWrapper = styled.div`
     border: 1px solid;
     width: 100%;
   }
+  @media (max-width: 900px) {
+    padding: 100px 30px;
+  }
 `
 
 const Button = styled.button`
@@ -101,6 +104,7 @@ const SectionTitle = styled.h1`
   font-family: "Roboto", sans-serif;
   color: #53924f;
   margin-bottom: 20px;
+  text-align: center;
 `
 
 const SectionDescriptor = styled.p`
@@ -108,9 +112,10 @@ const SectionDescriptor = styled.p`
   color: #000000;
   font-size: 20px;
   margin-bottom: 80px;
+  text-align: center;
 `
 
-const SectionTwo = () => {
+const SectionTwo = ({ handleOpenModal }) => {
   const [state, setState] = useState(1)
 
   const renderTestimonials = () => {
@@ -181,7 +186,7 @@ const SectionTwo = () => {
             <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.218 19l-1.782-1.75 5.25-5.25-5.25-5.25 1.782-1.75 6.968 7-6.968 7z" />
           </svg>
         </TestimonyContainer>
-        <Button>Schedule Now</Button>
+        <Button onClick={handleOpenModal}>Schedule Now</Button>
       </div>
     </PageWrapper>
   )
