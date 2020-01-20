@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../components/layout.css"
+import ReactLoading from "react-loading"
 import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import SectionOne from "../components/SectionOne"
@@ -7,6 +8,8 @@ import SectionTwo from "../components/SectionTwo"
 import SectionThree from "../components/SectionThree"
 import SectionFour from "../components/SectionFour"
 import SectionFive from "../components/SectionFive"
+import SliderComponent from "../components/SliderComponent"
+import Loading from "react-loading"
 
 const Navbar = styled.div`
   position: absolute;
@@ -45,7 +48,13 @@ const Navbar = styled.div`
     }
   }
 `
-
+const LoadingWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 const AppWrapper = styled.div`
   position: relative;
   z-index: 3;
@@ -143,8 +152,17 @@ function encode(data) {
 }
 
 const IndexPage = () => {
+  // const [loading, setLoading] = useState(false)
   const [modal, setModal] = useState(false)
   const [state, setState] = useState()
+
+  // useEffect(() => {
+  //   let timer1 = setTimeout(() => setLoading(false), 0.5)
+
+  //   return () => {
+  //     clearTimeout(timer1)
+  //   }
+  // })
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -172,6 +190,13 @@ const IndexPage = () => {
   const handleOpenModal = () => {
     setModal(true)
   }
+
+  // if (loading)
+  //   return (
+  //     <LoadingWrapper>
+  //       <ReactLoading type="spin" color={"#53924f"} height={40} width={40} />
+  //     </LoadingWrapper>
+  //   )
 
   return (
     <AppWrapper>

@@ -3,13 +3,13 @@ import styled from "styled-components"
 
 const TestimonialContainer = styled.div`
   position: relative;
-  height: 500px;
-  width: 300px;
+  height: 600px;
+  width: 400px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   border-radius: 3px;
   overflow: hidden;
-  margin: 0 20px;
+  margin: 10px 20px;
   &.notCenter {
     opacity: 0.5;
   }
@@ -26,7 +26,7 @@ const TestimonialContainer = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60%;
+    height: 50%;
     z-index: 2;
     background: #ffffff;
     padding: 40px 20px;
@@ -47,6 +47,16 @@ const TestimonialContainer = styled.div`
   }
   #ruby {
     top: -70px;
+  }
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 `
 

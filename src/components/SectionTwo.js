@@ -2,12 +2,35 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { testimonials } from "../messages/testimonials"
 import Testimony from "./Testimony"
+import SliderComponent from "../components/SliderComponent"
 
 const PageWrapper = styled.div`
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   padding: 100px 0;
+  .slick-arrow {
+    background: transparent;
+  }
+  .slick-arrow:hover {
+    background: transparent;
+  }
+  .slick-next:before {
+    font-size: 50px;
+    line-height: 1;
+    opacity: 0.75;
+    color: #53924f;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 5px;
+  }
+  .slick-prev:before {
+    margin-left: -40px;
+    font-size: 50px;
+    line-height: 1;
+    opacity: 0.75;
+    color: #53924f;
+    -webkit-font-smoothing: antialiased;
+  }
   #pawPrint {
     position: absolute;
     top: 200px;
@@ -52,52 +75,19 @@ const Button = styled.button`
   }
 `
 
-const TestimonialContainer = styled.div`
-  position: relative;
-  height: 500px;
-  width: 300px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  background: #ffffff;
-  border-radius: 3px;
-  overflow: hidden;
-  margin: 0 20px;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .testimonial {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    z-index: 2;
-    background: #ffffff;
-    padding: 40px 20px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-style: italic;
-    overflow: scroll;
-  }
-  .topLeftQuote {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-  .topRightQuote {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-  }
-  #ruby {
-    top: -70px;
-  }
-`
-
 const TestimonyContainer = styled.div`
   display: flex;
   align-items: center;
+  .testimonials {
+    transition: 200ms ease-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1020px;
+    height: 600px;
+    overflow-x: hidden;
+    border: 2px solid black;
+  }
 `
 
 const SectionTitle = styled.h1`
@@ -117,21 +107,23 @@ const SectionDescriptor = styled.p`
 
 const SectionTwo = ({ handleOpenModal }) => {
   const [state, setState] = useState(1)
+  const transform = `translate(${-300 * (state - 1)}px, 0)`
+  console.log(state, transform)
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
 
   const renderTestimonials = () => {
-    const t1 = state - 1
-    const t2 = state
-    const t3 = state + 1
-
-    const renderArray = testimonials.filter((testimony, index) => {
-      return index === t1 || index === t2 || index === t3
-    })
-
-    return renderArray.map((testimomny, index) => {
-      if (index === state) {
-        return <Testimony key={index} className="center" dog={testimomny} />
+    return testimonials.map((testimony, index) => {
+      if (index === 1) {
+        return <Testimony key={index} className="center" dog={testimony} />
       } else {
-        return <Testimony key={index} className="notCenter" dog={testimomny} />
+        return <Testimony key={index} className="notCenter" dog={testimony} />
       }
     })
   }
@@ -141,7 +133,7 @@ const SectionTwo = ({ handleOpenModal }) => {
   }
 
   const handlePrevious = () => {
-    setState(state - 1)
+    // setState(state - 1)
   }
 
   return (
@@ -162,9 +154,9 @@ const SectionTwo = ({ handleOpenModal }) => {
         <SectionDescriptor>
           See why people have fallen in love with Marlon and K9 University
         </SectionDescriptor>
-        <TestimonyContainer>
+        <TestimonyContainer transform={transform}>
           {" "}
-          <svg
+          {/* <svg
             onClick={handlePrevious}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -173,9 +165,9 @@ const SectionTwo = ({ handleOpenModal }) => {
             fill="#56944f"
           >
             <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm7.58 0l5.988-5.995 1.414 1.416-4.574 4.579 4.574 4.59-1.414 1.416-5.988-6.006z" />
-          </svg>
-          {renderTestimonials()}
-          <svg
+          </svg> */}
+          <SliderComponent />
+          {/* <svg
             onClick={handleNext}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -184,7 +176,7 @@ const SectionTwo = ({ handleOpenModal }) => {
             fill="#56944f"
           >
             <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.218 19l-1.782-1.75 5.25-5.25-5.25-5.25 1.782-1.75 6.968 7-6.968 7z" />
-          </svg>
+          </svg> */}
         </TestimonyContainer>
         <Button onClick={handleOpenModal}>Schedule Now</Button>
       </div>
