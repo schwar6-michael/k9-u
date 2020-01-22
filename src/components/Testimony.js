@@ -26,7 +26,7 @@ const TestimonialContainer = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 60%;
     z-index: 2;
     background: #ffffff;
     padding: 40px 20px;
@@ -47,6 +47,15 @@ const TestimonialContainer = styled.div`
   }
   #ruby {
     top: -70px;
+  }
+  #reggie {
+    top: -200px;
+  }
+  #grayson {
+    top: -280px;
+  }
+  #madison {
+    top: -50px;
   }
   @keyframes fadeInLeft {
     0% {

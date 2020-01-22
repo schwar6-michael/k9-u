@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
   align-items: center;
   #bottomNavLogo {
     position: absolute;
-    top: 90px;
+    top: 115px;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -41,11 +41,11 @@ const SectionFive = () => {
         src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579279713/k9u-main-logo_f9xijc.png"
         alt="main"
       />
-      <ul>
+      {/* <ul>
         <li>Yelp</li>
         <li>Instagram</li>
         <li>Facebook</li>
-      </ul>
+      </ul> */}
     </PageWrapper>
   )
 }

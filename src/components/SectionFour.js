@@ -6,7 +6,7 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   background: #ffffff;
   padding: 80px 0;
-  z-index: -2;
+  z-index: 0;
   #index {
     display: flex;
     flex-direction: column;
@@ -26,8 +26,10 @@ const PageWrapper = styled.div`
   .row {
     display: flex;
   }
+  @media (max-width: 900px) {
+    padding: 80px 20px;
+  }
 `
-
 const SectionTitle = styled.h1`
   font-family: "Roboto", sans-serif;
   color: #53924f;
@@ -54,8 +56,7 @@ const Button = styled.button`
   font-family: "Roboto", sans-serif;
   padding-top: 4px;
   font-weight: 600;
-  cursor: pointer;
-  z-index: 5;
+  z-index: 10;
   transition: 200ms ease-out;
   &:hover {
     transform: scale(1.02);
@@ -122,7 +123,12 @@ const SectionFour = ({ handleOpenModal }) => {
                 alt="dog"
               />
               <h3>Training</h3>
-              <p>Traing includes training the dog and other stuff</p>
+              <p>
+                Our classes, sleep-away training, and in-home lessons help you
+                build a healthy relationship with your dog. We teach full
+                obedience, behavior modification, puppy classes, and group
+                socialization.
+              </p>
             </ContentContainer>
             <ContentContainer>
               <img
@@ -130,7 +136,12 @@ const SectionFour = ({ handleOpenModal }) => {
                 alt="dog"
               />
               <h3>Walking</h3>
-              <p>Traing includes training the dog and other stuff</p>
+              <p>
+                We offer 30-minute and 1-hour walking sessions for dogs of all
+                sizes. Our walkers are all experienced dog trainers, and by
+                request, we can even include some behavioral training into each
+                session.{" "}
+              </p>
             </ContentContainer>
           </div>
           <div className="row">
@@ -140,7 +151,13 @@ const SectionFour = ({ handleOpenModal }) => {
                 alt="dog"
               />
               <h3>Day Care</h3>
-              <p>Traing includes training the dog and other stuff</p>
+              <p>
+                Our daycare services include full days of fun and play designed
+                to provide daily companionship and to alleviate bad behavior
+                exhibited by our furry friends with separation issues. With four
+                playrooms to choose from your dog will beg to come to daycare,
+                we promise!
+              </p>
             </ContentContainer>
             <ContentContainer>
               <img
@@ -148,7 +165,17 @@ const SectionFour = ({ handleOpenModal }) => {
                 alt="dog"
               />
               <h3>Boarding</h3>
-              <p>Traing includes training the dog and other stuff</p>
+              <p>
+                All our caretakers have extensive knowledge and experience
+                dealing with all dog behaviors and medical requirements. Every
+                pet that stays with us gets individual care, dedicated playtime
+                and exercise that will make them feel the love!
+              </p>
+              {/* <p>
+                We aim to create a home-away-from-home experience and even offer
+                extra activities such as walks at BELMONT LAKE STATE PARK where
+                we make it feel like more of a hike than just a typical walk!
+              </p> */}
             </ContentContainer>
           </div>
         </Container>

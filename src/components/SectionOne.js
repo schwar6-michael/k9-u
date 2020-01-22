@@ -1,8 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import mainLogo from "../images/k9u-main-logo.png"
-import background1 from "../images/section-one-background.png"
-import pup from "../images/pup1.png"
 
 const PageWrapper = styled.div`
   position: relative;
@@ -84,8 +81,16 @@ const ContentContainer = styled.div`
 const SectionOne = ({ handleOpenModal }) => {
   return (
     <PageWrapper>
-      <img id="background" src={background1} alt="background" />
-      <img id="puppy" src={pup} alt="puppy" />
+      <img
+        id="background"
+        src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579654122/section-one-background_rgnpzi.png"
+        alt="background"
+      />
+      <img
+        id="puppy"
+        src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579654044/pup1_p1wnw1.png"
+        alt="puppy"
+      />
       <ContentContainer>
         <h1>New York-Based Dog Training</h1>
         <p>

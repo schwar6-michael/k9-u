@@ -1,7 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import { testimonials } from "../messages/testimonials"
-import Testimony from "./Testimony"
 import SliderComponent from "../components/SliderComponent"
 
 const PageWrapper = styled.div`
@@ -106,40 +104,8 @@ const SectionDescriptor = styled.p`
 `
 
 const SectionTwo = ({ handleOpenModal }) => {
-  const [state, setState] = useState(1)
-  const transform = `translate(${-300 * (state - 1)}px, 0)`
-  console.log(state, transform)
-
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  }
-
-  const renderTestimonials = () => {
-    return testimonials.map((testimony, index) => {
-      if (index === 1) {
-        return <Testimony key={index} className="center" dog={testimony} />
-      } else {
-        return <Testimony key={index} className="notCenter" dog={testimony} />
-      }
-    })
-  }
-
-  const handleNext = () => {
-    setState(state + 1)
-  }
-
-  const handlePrevious = () => {
-    // setState(state - 1)
-  }
-
   return (
     <PageWrapper>
-      {/* <div id="bubble1"></div>
-      <div id="bubble2"></div> */}
       <img
         id="pawPrint"
         src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579281891/paws_ee93dc.jpg"
@@ -154,29 +120,8 @@ const SectionTwo = ({ handleOpenModal }) => {
         <SectionDescriptor>
           See why people have fallen in love with Marlon and K9 University
         </SectionDescriptor>
-        <TestimonyContainer transform={transform}>
-          {" "}
-          {/* <svg
-            onClick={handlePrevious}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="#56944f"
-          >
-            <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm7.58 0l5.988-5.995 1.414 1.416-4.574 4.579 4.574 4.59-1.414 1.416-5.988-6.006z" />
-          </svg> */}
+        <TestimonyContainer>
           <SliderComponent />
-          {/* <svg
-            onClick={handleNext}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="#56944f"
-          >
-            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.218 19l-1.782-1.75 5.25-5.25-5.25-5.25 1.782-1.75 6.968 7-6.968 7z" />
-          </svg> */}
         </TestimonyContainer>
         <Button onClick={handleOpenModal}>Schedule Now</Button>
       </div>

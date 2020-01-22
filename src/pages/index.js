@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useRef } from "react"
 import "../components/layout.css"
-import ReactLoading from "react-loading"
 import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import SectionOne from "../components/SectionOne"
@@ -8,8 +7,6 @@ import SectionTwo from "../components/SectionTwo"
 import SectionThree from "../components/SectionThree"
 import SectionFour from "../components/SectionFour"
 import SectionFive from "../components/SectionFive"
-import SliderComponent from "../components/SliderComponent"
-import Loading from "react-loading"
 
 const Navbar = styled.div`
   position: absolute;
@@ -47,17 +44,15 @@ const Navbar = styled.div`
       display: none;
     }
   }
-`
-const LoadingWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (max-width: 675px) {
+    #mainLogo {
+      left: 0px;
+    }
+  }
 `
 const AppWrapper = styled.div`
   position: relative;
-  z-index: 3;
+  z-index: 0;
 `
 
 const Modal = styled.div`
@@ -108,11 +103,13 @@ const Modal = styled.div`
   label {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
+    width: 100%;
+    margin: 10px 0;
+    font-weight: 600;
   }
   input {
     width: 100%;
     outline: none;
-    margin: 10px 0;
   }
   textarea {
     width: 100%;
@@ -143,6 +140,11 @@ const Modal = styled.div`
       width: 400px;
     }
   }
+  @media (max-width: 657px) {
+    form {
+      width: 350px;
+    }
+  }
 `
 
 function encode(data) {
@@ -152,17 +154,14 @@ function encode(data) {
 }
 
 const IndexPage = () => {
-  // const [loading, setLoading] = useState(false)
   const [modal, setModal] = useState(false)
   const [state, setState] = useState()
+  const Section2 = useRef(null)
+  const Section3 = useRef(null)
+  const Section4 = useRef(null)
 
-  // useEffect(() => {
-  //   let timer1 = setTimeout(() => setLoading(false), 0.5)
-
-  //   return () => {
-  //     clearTimeout(timer1)
-  //   }
-  // })
+  const scrollToRef = ref =>
+    window.scrollTo({ top: ref.current.offsetTop, behavior: "smooth" })
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -190,13 +189,6 @@ const IndexPage = () => {
   const handleOpenModal = () => {
     setModal(true)
   }
-
-  // if (loading)
-  //   return (
-  //     <LoadingWrapper>
-  //       <ReactLoading type="spin" color={"#53924f"} height={40} width={40} />
-  //     </LoadingWrapper>
-  //   )
 
   return (
     <AppWrapper>
@@ -244,15 +236,21 @@ const IndexPage = () => {
           alt="main"
         />
         <ul>
-          <li>Reviews</li>
-          <li>Meet Marlon</li>
-          <li>Services</li>
+          <li onClick={() => scrollToRef(Section2)}>Reviews</li>
+          <li onClick={() => scrollToRef(Section3)}>Meet Marlon</li>
+          <li onClick={() => scrollToRef(Section4)}>Services</li>
         </ul>
       </Navbar>
       <SectionOne handleOpenModal={handleOpenModal} />
-      <SectionTwo handleOpenModal={handleOpenModal} />
-      <SectionThree />
-      <SectionFour handleOpenModal={handleOpenModal} />
+      <div ref={Section2}>
+        <SectionTwo handleOpenModal={handleOpenModal} />
+      </div>
+      <div ref={Section3}>
+        <SectionThree />
+      </div>
+      <div ref={Section4}>
+        <SectionFour handleOpenModal={handleOpenModal} />
+      </div>
       <SectionFive />
     </AppWrapper>
   )

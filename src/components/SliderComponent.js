@@ -28,7 +28,7 @@ const SliderComponent = () => {
       <SliderContainer>
         <Slider {...settings}>
           {testimonials.map(testimony => {
-            return <Testimony dog={testimony} />
+            return <Testimony key={testimony.name} dog={testimony} />
           })}
         </Slider>
       </SliderContainer>
