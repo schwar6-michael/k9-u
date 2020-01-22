@@ -67,6 +67,9 @@ const TestimonialContainer = styled.div`
       transform: translateX(0);
     }
   }
+  @media (max-width: 657px) {
+    width: 360px;
+  }
 `
 
 const Testimony = ({ className, dog }) => {

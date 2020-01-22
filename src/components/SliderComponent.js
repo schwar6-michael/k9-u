@@ -13,6 +13,9 @@ const Wrapper = styled.div`
 `
 const SliderContainer = styled.div`
   width: 440px;
+  @media (max-width: 657px) {
+    width: 400px;
+  }
 `
 
 const SliderComponent = () => {

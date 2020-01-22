@@ -32,6 +32,11 @@ const PageWrapper = styled.div`
       height: 400px;
     }
   }
+  @media (max-width: 675px) {
+    #puppy {
+      right: 80px;
+    }
+  }
 `
 
 const Button = styled.button`

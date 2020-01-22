@@ -76,7 +76,7 @@ const Modal = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 100px;
+    padding: 40px 7%;
     cursor: pointer;
     animation: fadeInDown 400ms ease-out;
     svg {
@@ -124,7 +124,7 @@ const Modal = styled.div`
     color: #ffffff;
     border: none;
     border-radius: 2px;
-    width: 300px;
+    width: 100%;
     font-family: "Roboto", sans-serif;
     padding-top: 4px;
     font-weight: 600;
