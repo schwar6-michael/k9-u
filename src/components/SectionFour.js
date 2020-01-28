@@ -144,6 +144,17 @@ const PricingContainer = styled.div`
     font-size: 16px;
     color: #53924f;
   }
+  @media (max-width: 657px) {
+    li {
+      font-size: 18px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    padding: 40px 10px;
+    width: 350px;
+  }
 `
 
 const Container = styled.div`
