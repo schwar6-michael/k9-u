@@ -46,7 +46,6 @@ const SectionDescriptor = styled.p`
 `
 
 const Button = styled.button`
-  margin-top: 80px;
   height: 40px;
   background: #53924f;
   color: #ffffff;
@@ -81,6 +80,69 @@ const ContentContainer = styled.div`
     font-family: "Open Sans", sans-serif;
     text-align: center;
     width: 250px;
+  }
+  @media (max-width: 657px) {
+    p {
+      width: 350px;
+    }
+    img {
+      height: 180px;
+    }
+  }
+`
+
+const PricingContainer = styled.div`
+  position: relative;
+  padding: 40px 20px;
+  border: 1px solid #53924f;
+  border-top: 60px solid #53924f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  p {
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #000000;
+  }
+  svg {
+    margin-right: 10px;
+  }
+  b {
+    margin-right: 5px;
+  }
+  &:after {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #53924f;
+    content: "PRICING";
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+  }
+  span {
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    text-align: center;
+    font-size: 16px;
+    color: #53924f;
   }
 `
 
@@ -161,7 +223,7 @@ const SectionFour = ({ handleOpenModal }) => {
             </ContentContainer>
             <ContentContainer>
               <img
-                src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047805/undraw_walk_dreaming_u58a_z2k4mb.png"
+                src="https://res.cloudinary.com/dx5hyipym/image/upload/v1580175775/undraw_woman_mevk_u2sdsj.png"
                 alt="dog"
               />
               <h3>Boarding</h3>
@@ -179,7 +241,77 @@ const SectionFour = ({ handleOpenModal }) => {
             </ContentContainer>
           </div>
         </Container>
-        <Button onClick={handleOpenModal}>Get A Quote</Button>
+        <PricingContainer>
+          <ul>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#53924f"
+              >
+                <path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z" />
+              </svg>
+              <b>Freshman: </b> 2 Week Program
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#53924f"
+              >
+                <path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z" />
+              </svg>
+              <b>Sophomore: </b> 3 Week Program
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#53924f"
+              >
+                <path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z" />
+              </svg>
+              <b>Junior: </b> 4 Week Program{" "}
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#53924f"
+              >
+                <path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z" />
+              </svg>
+              <b>Senior: </b> 6 Week Program{" "}
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#53924f"
+              >
+                <path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z" />
+              </svg>
+              <b>Private </b> Training Sessions{" "}
+            </li>
+          </ul>
+          <p>
+            *Pricing for each program varies depening on a number of factors. To
+            get an accurate estimate of what each service might cost, please
+            fill out the form by 'clicking' on <span>Get a Quote</span>. We will
+            get back to you in as soon as we can. Thank you!
+          </p>
+          <Button onClick={handleOpenModal}>Get A Quote</Button>
+        </PricingContainer>
       </div>
     </PageWrapper>
   )
