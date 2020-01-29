@@ -44,12 +44,12 @@ const PageWrapper = styled.div`
 const Image = styled.div`
   display: flex;
   align-items: center;
-  height: 400px;
-  width: 400px;
-  border-radius: 400px;
+  height: 350px;
+  width: 350px;
+  border-radius: 350px;
   overflow: hidden;
   img {
-    border-radius: 400px;
+    border-radius: 350px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   }
   @media (max-width: 667px) {
@@ -66,13 +66,14 @@ const Description = styled.span`
 `
 
 const Name = styled.span`
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-weight: 600;
   line-height: 40px;
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
+  margin-bottom: 10px;
   @media (max-width: 667px) {
     text-align: center;
   }
@@ -111,7 +112,8 @@ const SectionThree = () => {
             />
           </Image>
           <Name>Meet Marlon Leon:</Name>
-          <Description>Master Dog Trainer</Description>
+          <Description>Dog Obedience Trainer,</Description>
+          <Description>Penn Foster Career School</Description>
         </div>
         <TrainerBio>
           Hi, my name is Marlon Leon. And I've been around and working with dogs{" "}

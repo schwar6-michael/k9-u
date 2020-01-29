@@ -41,8 +41,21 @@ const SectionDescriptor = styled.p`
   font-family: "Open Sans", sans-serif;
   color: #000000;
   font-size: 20px;
-  margin-bottom: 80px;
   text-align: center;
+`
+
+const PickupDecsriptor = styled.p`
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+  font-size: 14px;
+  font-style: italic;
+  width: 80%;
+  margin-bottom: 30px;
+  text-align: center;
+  span {
+    color: #53924f;
+    font-weight: bold;
+  }
 `
 
 const Button = styled.button`
@@ -141,7 +154,6 @@ const PricingContainer = styled.div`
     font-style: italic;
     font-weight: 900;
     text-align: center;
-    font-size: 16px;
     color: #53924f;
   }
   @media (max-width: 657px) {
@@ -186,8 +198,15 @@ const SectionFour = ({ handleOpenModal }) => {
         <SectionTitle>Services We Offer</SectionTitle>
         <SectionDescriptor>
           From Training to Day Care, we offer top of line the services that
-          leave our customers happy
+          leave our clients happy
         </SectionDescriptor>
+        <PickupDecsriptor>
+          *We offer <span>pet transportation</span> to and from our facility as
+          well as to and from vet appointments in Lindenhurst, Massapequa,
+          Copiague and Babylon (please note that we cannot stay with your pet
+          during the appointment). Prices vary according to location. Pickup and
+          dropoffs to the airport as well.
+        </PickupDecsriptor>
         <Container>
           <div className="row">
             <ContentContainer>
@@ -197,12 +216,31 @@ const SectionFour = ({ handleOpenModal }) => {
               />
               <h3>Training</h3>
               <p>
-                Our classes, sleep-away training, and in-home lessons help you
-                build a healthy relationship with your dog. We teach full
-                obedience, behavior modification, puppy classes, and group
-                socialization.
+                K9 University is dedicated to owners who want to give their dogs
+                the ultimate learning experience. We teach full obedience,
+                behavior modification, puppy classes, and group socialization.
+                Each dog has their own curriculum based upon their behavioral
+                modification needs while they are at training. Training is 7
+                days a week.
               </p>
             </ContentContainer>
+            <ContentContainer>
+              <img
+                src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047868/undraw_Cautious_dog_q83f_ioowat.png"
+                alt="dog"
+              />
+              <h3>Day Care</h3>
+              <p>
+                Let your dogs run and play in our indoor temperature controlled
+                playrooms. We offer over 7500 sq ft of supervised fun. Doggy
+                daycare provides a dog-friendly atmosphere where each pup is
+                treated to lots of love and attention from a dedicated staff. K9
+                University is proud to provide an outstanding structured doggy
+                daycare for all dog breeds of all shapes and sizes.
+              </p>
+            </ContentContainer>
+          </div>
+          <div className="row">
             <ContentContainer>
               <img
                 src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047589/undraw_Modern_woman_lxh7_ohns1z.png"
@@ -214,22 +252,6 @@ const SectionFour = ({ handleOpenModal }) => {
                 sizes. Our walkers are all experienced dog trainers, and by
                 request, we can even include some behavioral training into each
                 session.{" "}
-              </p>
-            </ContentContainer>
-          </div>
-          <div className="row">
-            <ContentContainer>
-              <img
-                src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047868/undraw_Cautious_dog_q83f_ioowat.png"
-                alt="dog"
-              />
-              <h3>Day Care</h3>
-              <p>
-                Our daycare services include full days of fun and play designed
-                to provide daily companionship and to alleviate bad behavior
-                exhibited by our furry friends with separation issues. With four
-                playrooms to choose from your dog will beg to come to daycare,
-                we promise!
               </p>
             </ContentContainer>
             <ContentContainer>
@@ -318,8 +340,8 @@ const SectionFour = ({ handleOpenModal }) => {
           <p>
             *Pricing for each program varies depening on a number of factors. To
             get an accurate estimate of what each service might cost, please
-            fill out the form by 'clicking' on <span>Get a Quote</span>. We will
-            get back to you in as soon as we can. Thank you!
+            fill out the form by 'clicking' on <span>'Get a Quote'</span>. We
+            will get back to you in as soon as we can. Thank you!
           </p>
           <Button onClick={handleOpenModal}>Get A Quote</Button>
         </PricingContainer>
