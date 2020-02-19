@@ -81,6 +81,9 @@ const ContentContainer = styled.div`
   @media (max-width: 1075px) {
     z-index: 1;
   }
+  @media (max-width: 675px) {
+    margin-top: -120px;
+  }
 `
 
 const SectionOne = ({ handleOpenModal }) => {

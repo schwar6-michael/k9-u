@@ -197,7 +197,7 @@ const SectionFour = ({ handleOpenModal }) => {
         />
         <SectionTitle>Services We Offer</SectionTitle>
         <SectionDescriptor>
-          From Training to Day Care, we offer top of line the services that
+          From Training to Day Care, we offer top of the line services that
           leave our clients happy
         </SectionDescriptor>
         <PickupDecsriptor>
@@ -341,7 +341,7 @@ const SectionFour = ({ handleOpenModal }) => {
             *Pricing for each program varies depening on a number of factors. To
             get an accurate estimate of what each service might cost, please
             fill out the form by 'clicking' on <span>'Get a Quote'</span>. We
-            will get back to you in as soon as we can. Thank you!
+            will get back to you as soon as we can. Thank you!
           </p>
           <Button onClick={handleOpenModal}>Get A Quote</Button>
         </PricingContainer>
