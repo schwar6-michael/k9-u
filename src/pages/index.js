@@ -197,7 +197,8 @@ function encode(data) {
     .join("&")
 }
 
-const IndexPage = () => {
+const IndexPage = props => {
+  console.log(props)
   const [modal, setModal] = useState(false)
   const [state, setState] = useState()
   const [success, setSuccess] = useState(false)
@@ -342,15 +343,24 @@ const IndexPage = () => {
           <li onClick={() => scrollToRef(Section4)}>Services</li>
         </ul>
       </Navbar>
-      <SectionOne handleOpenModal={handleOpenModal} />
+      <SectionOne
+        content={props.data.content.section1}
+        handleOpenModal={handleOpenModal}
+      />
       <div ref={Section2}>
-        <SectionTwo handleOpenModal={handleOpenModal} />
+        <SectionTwo
+          content={props.data.content.section2}
+          handleOpenModal={handleOpenModal}
+        />
       </div>
       <div ref={Section3}>
-        <SectionThree />
+        <SectionThree content={props.data.content.section3} />
       </div>
       <div ref={Section4}>
-        <SectionFour handleOpenModal={handleOpenModal} />
+        <SectionFour
+          content={props.data.content.section4}
+          handleOpenModal={handleOpenModal}
+        />
       </div>
       <SectionFive />
     </AppWrapper>
@@ -358,3 +368,22 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const Query = graphql`
+  query MainQuery {
+    content: contentfulK9U {
+      section1 {
+        json
+      }
+      section2 {
+        json
+      }
+      section3 {
+        json
+      }
+      section4 {
+        json
+      }
+    }
+  }
+`

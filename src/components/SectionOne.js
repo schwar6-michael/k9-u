@@ -86,7 +86,9 @@ const ContentContainer = styled.div`
   }
 `
 
-const SectionOne = ({ handleOpenModal }) => {
+const SectionOne = ({ handleOpenModal, content }) => {
+  const contentArr = content.json.content
+
   return (
     <PageWrapper>
       <img
@@ -100,12 +102,15 @@ const SectionOne = ({ handleOpenModal }) => {
         alt="puppy"
       />
       <ContentContainer>
-        <h1>New York-Based Dog Training</h1>
+        <h1>{contentArr[0].content[0].value}</h1>
         <p>
-          It's simple. K9 University turns good boys and girls, into{" "}
-          <span>GREAT </span>ones.
+          {contentArr[1].content[0].value}
+          <span>{contentArr[2].content[0].value}</span>
+          {contentArr[3].content[0].value}
         </p>
-        <Button onClick={handleOpenModal}>Schedule Training Today</Button>
+        <Button onClick={handleOpenModal}>
+          {contentArr[4].content[0].value}
+        </Button>
       </ContentContainer>
     </PageWrapper>
   )

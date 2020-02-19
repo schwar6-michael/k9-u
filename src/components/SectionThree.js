@@ -98,7 +98,9 @@ const TrainerBio = styled.span`
   }
 `
 
-const SectionThree = () => {
+const SectionThree = ({ content }) => {
+  const contentArr = content.json.content
+  console.log(contentArr)
   return (
     <PageWrapper>
       <div id="bubble3"></div>{" "}
@@ -111,39 +113,15 @@ const SectionThree = () => {
               alt="marlon trainer"
             />
           </Image>
-          <Name>Meet Marlon Leon:</Name>
-          <Description>Dog Obedience Trainer,</Description>
-          <Description>Penn Foster Career School</Description>
+          <Name>{contentArr[0].content[0].value}</Name>
+          <Description>{contentArr[1].content[0].value}</Description>
+          <Description>{contentArr[2].content[0].value}</Description>
         </div>
-        <TrainerBio>
-          Hi, my name is Marlon Leon. And I've been around and working with dogs{" "}
-          <span>my whole life.</span>
-          <br></br>
-          <br></br>
-          Since the age of 18, I have been working in animal shelters and
-          veterinary offices learning how to <span>handle</span> all types of
-          dogs, even ones with aggressive and{" "}
-          <span>seemingly untrainable behavior.</span>
-          <br></br>
-          <br></br>
-          These are the dogs that made my heart sink. They made me realize who I
-          was, and provided me with my lifelong purpose of helping them and
-          their owners live happier, better lives.
-          <br></br>
-          <br></br>
-          Loving dogs is <span>easy</span>, but communicating with them can be{" "}
-          <span>challenging</span>, especially because they can't let you know
-          if something hurts them or if they don't feel well.
-          <br></br>
-          <br></br>
-          Understanding both aspects of a dog's behavior and a dog's health is
-          truly the first step to my training process. Dogs want love and want
-          to be loved. They form bonds with people based on their trust of
-          people. The way that I train begins with me creating a bond, and
-          letting the dog know - that I am NOT the enemy. Once you have formed
-          this kind of bond with a dog, it creates a{" "}
-          <span>positive learning environment</span> that will end in success.
-        </TrainerBio>
+        <TrainerBio>{contentArr[3].content[0].value}</TrainerBio>
+        <TrainerBio>{contentArr[4].content[0].value}</TrainerBio>
+        <TrainerBio>{contentArr[5].content[0].value}</TrainerBio>
+        <TrainerBio>{contentArr[6].content[0].value}</TrainerBio>
+        <TrainerBio>{contentArr[7].content[0].value}</TrainerBio>
       </div>
     </PageWrapper>
   )

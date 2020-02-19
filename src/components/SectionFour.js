@@ -182,7 +182,9 @@ const Container = styled.div`
   }
 `
 
-const SectionFour = ({ handleOpenModal }) => {
+const SectionFour = ({ handleOpenModal, content }) => {
+  const contentArr = content.json.content
+
   return (
     <PageWrapper>
       <img
@@ -195,18 +197,9 @@ const SectionFour = ({ handleOpenModal }) => {
           src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579286816/iconmonstr-school-21-240_iypnbg.png"
           alt="graduating cap"
         />
-        <SectionTitle>Services We Offer</SectionTitle>
-        <SectionDescriptor>
-          From Training to Day Care, we offer top of the line services that
-          leave our clients happy
-        </SectionDescriptor>
-        <PickupDecsriptor>
-          *We offer <span>pet transportation</span> to and from our facility as
-          well as to and from vet appointments in Lindenhurst, Massapequa,
-          Copiague and Babylon (please note that we cannot stay with your pet
-          during the appointment). Prices vary according to location. Pickup and
-          dropoffs to the airport as well.
-        </PickupDecsriptor>
+        <SectionTitle>{contentArr[0].content[0].value}</SectionTitle>
+        <SectionDescriptor>{contentArr[1].content[0].value}</SectionDescriptor>
+        <PickupDecsriptor>{contentArr[2].content[0].value}</PickupDecsriptor>
         <Container>
           <div className="row">
             <ContentContainer>
@@ -214,30 +207,16 @@ const SectionFour = ({ handleOpenModal }) => {
                 src="https://res.cloudinary.com/dx5hyipym/image/upload/v1578964085/undraw_good_doggy_4wfq_1_be2jxn.png"
                 alt="dog"
               />
-              <h3>Training</h3>
-              <p>
-                K9 University is dedicated to owners who want to give their dogs
-                the ultimate learning experience. We teach full obedience,
-                behavior modification, puppy classes, and group socialization.
-                Each dog has their own curriculum based upon their behavioral
-                modification needs while they are at training. Training is 7
-                days a week.
-              </p>
+              <h3>{contentArr[3].content[0].value}</h3>
+              <p>{contentArr[4].content[0].value}</p>
             </ContentContainer>
             <ContentContainer>
               <img
                 src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047868/undraw_Cautious_dog_q83f_ioowat.png"
                 alt="dog"
               />
-              <h3>Day Care</h3>
-              <p>
-                Let your dogs run and play in our indoor temperature controlled
-                playrooms. We offer over 7500 sq ft of supervised fun. Doggy
-                daycare provides a dog-friendly atmosphere where each pup is
-                treated to lots of love and attention from a dedicated staff. K9
-                University is proud to provide an outstanding structured doggy
-                daycare for all dog breeds of all shapes and sizes.
-              </p>
+              <h3>{contentArr[5].content[0].value}</h3>
+              <p>{contentArr[6].content[0].value}</p>
             </ContentContainer>
           </div>
           <div className="row">
@@ -246,26 +225,16 @@ const SectionFour = ({ handleOpenModal }) => {
                 src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579047589/undraw_Modern_woman_lxh7_ohns1z.png"
                 alt="dog"
               />
-              <h3>Walking</h3>
-              <p>
-                We offer 30-minute and 1-hour walking sessions for dogs of all
-                sizes. Our walkers are all experienced dog trainers, and by
-                request, we can even include some behavioral training into each
-                session.{" "}
-              </p>
+              <h3>{contentArr[7].content[0].value}</h3>
+              <p>{contentArr[8].content[0].value}</p>
             </ContentContainer>
             <ContentContainer>
               <img
                 src="https://res.cloudinary.com/dx5hyipym/image/upload/v1580175775/undraw_woman_mevk_u2sdsj.png"
                 alt="dog"
               />
-              <h3>Boarding</h3>
-              <p>
-                All our caretakers have extensive knowledge and experience
-                dealing with all dog behaviors and medical requirements. Every
-                pet that stays with us gets individual care, dedicated playtime
-                and exercise that will make them feel the love!
-              </p>
+              <h3>{contentArr[9].content[0].value}</h3>
+              <p>{contentArr[10].content[0].value}</p>
               {/* <p>
                 We aim to create a home-away-from-home experience and even offer
                 extra activities such as walks at BELMONT LAKE STATE PARK where

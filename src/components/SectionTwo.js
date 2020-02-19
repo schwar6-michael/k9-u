@@ -103,7 +103,8 @@ const SectionDescriptor = styled.p`
   text-align: center;
 `
 
-const SectionTwo = ({ handleOpenModal }) => {
+const SectionTwo = ({ handleOpenModal, content }) => {
+  const contentArr = content.json.content
   return (
     <PageWrapper>
       <img
@@ -116,14 +117,14 @@ const SectionTwo = ({ handleOpenModal }) => {
           src="https://res.cloudinary.com/dx5hyipym/image/upload/v1579281418/iconmonstr-building-1-240_g4pktg.png"
           alt="dog house"
         />
-        <SectionTitle>What People Are Saying</SectionTitle>
-        <SectionDescriptor>
-          See why people have fallen in love with Marlon and K9 University
-        </SectionDescriptor>
+        <SectionTitle>{contentArr[0].content[0].value}</SectionTitle>
+        <SectionDescriptor>{contentArr[1].content[0].value}</SectionDescriptor>
         <TestimonyContainer>
           <SliderComponent />
         </TestimonyContainer>
-        <Button onClick={handleOpenModal}>Schedule Now</Button>
+        <Button onClick={handleOpenModal}>
+          {contentArr[2].content[0].value}
+        </Button>
       </div>
     </PageWrapper>
   )
