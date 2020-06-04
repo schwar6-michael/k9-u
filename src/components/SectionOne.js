@@ -62,6 +62,16 @@ const Button = styled.button`
 `
 
 const ContentContainer = styled.div`
+  #revelation_pets_booking_widget > div {
+    width: 100% !important;
+    border-radius: 2px !important;
+    max-width: none !important;
+  }
+  #revelation_pets_booking_widget_bt {
+    background: #53924f !important;
+    width: 100% !important;
+    border-radius: 2px !important;
+  }
   width: 450px;
   h1 {
     font-family: "Roboto", sans-serif;
@@ -89,6 +99,12 @@ const ContentContainer = styled.div`
 const SectionOne = ({ handleOpenModal, content }) => {
   const contentArr = content.json.content
 
+  const handleOpenWindow = () => {
+    window.open(
+      "https://us.revelationpets.com/newbooking/widget/token/ycjtq30kud"
+    )
+  }
+
   return (
     <PageWrapper>
       <img
@@ -108,7 +124,7 @@ const SectionOne = ({ handleOpenModal, content }) => {
           <span>{contentArr[2].content[0].value}</span>
           {contentArr[3].content[0].value}
         </p>
-        <Button onClick={handleOpenModal}>
+        <Button onClick={handleOpenWindow}>
           {contentArr[4].content[0].value}
         </Button>
       </ContentContainer>

@@ -104,6 +104,12 @@ const SectionDescriptor = styled.p`
 `
 
 const SectionTwo = ({ handleOpenModal, content }) => {
+  const handleOpenWindow = () => {
+    window.open(
+      "https://us.revelationpets.com/newbooking/widget/token/ycjtq30kud"
+    )
+  }
+
   const contentArr = content.json.content
   return (
     <PageWrapper>
@@ -122,7 +128,7 @@ const SectionTwo = ({ handleOpenModal, content }) => {
         <TestimonyContainer>
           <SliderComponent />
         </TestimonyContainer>
-        <Button onClick={handleOpenModal}>
+        <Button onClick={handleOpenWindow}>
           {contentArr[2].content[0].value}
         </Button>
       </div>

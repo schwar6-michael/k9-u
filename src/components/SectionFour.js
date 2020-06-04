@@ -185,6 +185,12 @@ const Container = styled.div`
 const SectionFour = ({ handleOpenModal, content }) => {
   const contentArr = content.json.content
 
+  const handleOpenWindow = () => {
+    window.open(
+      "https://us.revelationpets.com/newbooking/widget/token/ycjtq30kud"
+    )
+  }
+
   return (
     <PageWrapper>
       <img
@@ -312,7 +318,7 @@ const SectionFour = ({ handleOpenModal, content }) => {
             fill out the form by 'clicking' on <span>'Get a Quote'</span>. We
             will get back to you as soon as we can. Thank you!
           </p>
-          <Button onClick={handleOpenModal}>Get A Quote</Button>
+          <Button onClick={handleOpenWindow}>Get A Quote</Button>
         </PricingContainer>
       </div>
     </PageWrapper>
