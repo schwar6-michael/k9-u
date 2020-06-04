@@ -247,12 +247,6 @@ const IndexPage = props => {
   return (
     <>
       <AppWrapper>
-        <Helmet>
-          <script
-            type="text/javascript"
-            src="https://us.revelationpets.com/newbooking/widgetJs/jsFile/ycjtq30kud.js"
-          ></script>
-        </Helmet>
         {modal && (
           <Modal>
             <form
