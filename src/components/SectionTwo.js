@@ -110,13 +110,6 @@ const SectionTwo = ({ handleOpenModal, content }) => {
     )
   }
 
-  useEffect(() => {
-    const widgetContainer = document.getElementById("widget")
-    const widget = document.getElementById("revelation_pets_widget")
-
-    widgetContainer.appendChild(widget)
-  }, [])
-
   // const widgetContainer = document.getElementById("widget")
 
   const contentArr = content.json.content
@@ -135,9 +128,9 @@ const SectionTwo = ({ handleOpenModal, content }) => {
         <SectionTitle>{contentArr[0].content[0].value}</SectionTitle>
         <SectionDescriptor>{contentArr[1].content[0].value}</SectionDescriptor>
         <StyledWidget id="widget"></StyledWidget>
-        {/* <TestimonyContainer>
+        <TestimonyContainer>
           <SliderComponent />
-        </TestimonyContainer> */}
+        </TestimonyContainer>
         <Button onClick={handleOpenWindow}>
           {contentArr[2].content[0].value}
         </Button>
