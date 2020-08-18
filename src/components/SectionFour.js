@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import ScriptTag from "react-script-tag"
 
 const PageWrapper = styled.div`
   position: relative;
@@ -206,7 +207,7 @@ const SectionFour = ({ handleOpenModal, content }) => {
         <SectionTitle>{contentArr[0].content[0].value}</SectionTitle>
         <SectionDescriptor>{contentArr[1].content[0].value}</SectionDescriptor>
         <PickupDecsriptor>{contentArr[2].content[0].value}</PickupDecsriptor>
-        <Container>
+        <Container id="hi">
           <div className="row">
             <ContentContainer>
               <img
